@@ -22,5 +22,21 @@
   "bugs": {
     "url": "https://github.com/tonypujals/npt/issues"
   },
-  "homepage": "https://github.com/tonypujals/npt"
+  "homepage": "https://github.com/tonypujals/npt",
+  "dependencies": {
+    "archiver": "^0.13.1",
+    "async": "^0.9.0",
+    "fstream": "^1.0.3",
+    "lodash": "^2.4.1",
+    "minimatch": "^2.0.1",
+    "node-dirwalker": "^1.0.0",
+    "request": "^2.51.0",
+    "tar": "^1.0.3",
+    "tar-stream": "^1.1.2",
+    "tarball-extract": "0.0.3",
+    "tmp": "0.0.24"
+  },
+  "devDependencies": {
+    "mocha": "^2.1.0"
+  }
 }
