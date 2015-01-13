@@ -1,7 +1,7 @@
 {
   "name": "npt",
   "version": "0.0.1",
-  "description": "Node Package Transfer utility",
+  "description": "Node Package Tool",
   "main": "index.js",
   "scripts": {
     "test": "mocha"
@@ -17,7 +17,7 @@
     "utility",
     "tool"
   ],
-  "author": "Tony Pujals <tony@subfuzion.com> (http://twitter.com/subfuzion)",
+  "author": "Tony Pujals (http://twitter.com/subfuzion)",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/tonypujals/npt/issues"
