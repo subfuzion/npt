@@ -3,6 +3,6 @@ module.exports = {
   Uploader: require('./lib/uploader'),
   Downloader: require('./lib/downloader'),
   Extractor: require('./lib/extractor'),
-  Copier: require('./lib/copier')
+  fsx: require('./lib/fsx')
 };
 
