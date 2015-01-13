@@ -1,4 +1,5 @@
 var assert = require('assert'),
+    fsex = require('fs-extra'),
     npt = require('..'),
     Downloader = npt.Downloader,
     Packager = npt.Packager,
@@ -8,6 +9,10 @@ var fs = require('fs'),
     request = require('request'),
     util = require('util');
 
+
+before(function() {
+  fsex.ensureDirSync(path.join(__dirname, 'output'));
+});
 
 /*
  describe('packager tests', function () {
@@ -63,36 +68,7 @@ describe('downloader tests', function () {
 
   });
 
-  it.skip('should download a package from github using a token', function (done) {
-    //var url = 'https://api.github.com/repos/aquajs/aquajs-microservice/tarball?access_token=666a3f67eaa0416c6e1acaf4a97b3a6879e3bc77',
-    var url = 'https://api.github.com/repos/aquajs/aquajs-microservice/tarball',
-        target = path.join(__dirname, 'output/tarball'),
-        downloader = DownLoader();
-
-    var options = {
-      url: url,
-      target: target,
-
-      auth: {
-        'bearer': '666a3f67eaa0416c6e1acaf4a97b3a6879e3bc77'
-      }
-
-      /*
-       headers: {
-       Authorization: 'token ' + '666a3f67eaa0416c6e1acaf4a97b3a6879e3bc77'
-       }
-       */
-    }
-
-    downloader.download(url, options, function (err, path) {
-      if (err) return done(err);
-      console.log(path);
-      done();
-    });
-
-  });
-
-  it.skip('should download a package from github using a token', function (done) {
+  it('should download a package from github using a token', function (done) {
     var options = {
       url: 'https://api.github.com/repos/aquajs/aquajs-microservice/tarball',
       headers: {
@@ -134,15 +110,14 @@ describe('downloader tests', function () {
     this.timeout(5 * 60 * 1000);
 
     var options = {
-      url: 'https://api.github.com/repos/aquajs/aquajs-microservice/tarball',
+      url: 'https://api.github.com/repos/tonypujals/node-dirwalker/tarball',
       filepath: path.join(__dirname, 'output/tarball'),
       extractDir: path.join(__dirname, 'output'),
-      rename: 'aquajs-microservice'
+      rename: 'node-dirwalker'
     };
 
     Downloader().download(options, function (err, path) {
       if (err) return done(err);
-      console.log(path);
       done();
     });
 
